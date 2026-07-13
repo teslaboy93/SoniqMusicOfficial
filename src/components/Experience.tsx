@@ -2,8 +2,10 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { PhoneMockup } from "./PhoneMockup";
 
+type Screen = "home" | "discover" | "quickpicks" | "nowplaying" | "library";
+
 type Step = {
-  screen: "home" | "discover" | "quickpicks" | "nowplaying" | "library";
+  screen: Screen;
   step: string;
   title: string;
   description: string;
@@ -54,10 +56,9 @@ export function Experience() {
     offset: ["start start", "end end"],
   });
 
-  // 5 steps → map progress to step index
   const stepIndex = useTransform(scrollYProgress, (v) => {
-    const idx = Math.min(Math.floor(v * steps.length), steps.length - 1);
-    return idx;
+    const clamped = Math.max(0, Math.min(v, 1));
+    return Math.min(Math.floor(clamped * steps.length), steps.length - 1);
   });
 
   return (
@@ -82,8 +83,8 @@ export function Experience() {
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left: sticky phone */}
-          <div className="hidden lg:block">
-            <div className="sticky top-1/2 -translate-y-1/2 flex justify-center py-20">
+          <div className="hidden lg:block self-start">
+            <div className="sticky top-24 flex justify-center py-10">
               <PhoneStepDisplay stepIndex={stepIndex} />
             </div>
           </div>
@@ -97,7 +98,7 @@ export function Experience() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.5 }}
-                className="min-h-[60vh] flex flex-col justify-center py-8"
+                className="min-h-[70vh] flex flex-col justify-center py-8"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-sm font-bold gradient-text">{s.step}</span>
@@ -124,25 +125,22 @@ export function Experience() {
 
 function PhoneStepDisplay({ stepIndex }: { stepIndex: MotionValue<number> }) {
   return (
-    <div className="relative">
+    <div className="relative w-[260px] h-[540px]">
       {steps.map((s, i) => {
         const opacity = useTransform(stepIndex, (v) => (v === i ? 1 : 0));
-        const scale = useTransform(stepIndex, (v) => (v === i ? 1 : 0.95));
+        const scale = useTransform(stepIndex, (v) => (v === i ? 1 : 0.92));
+        const y = useTransform(stepIndex, (v) => (v === i ? 0 : 20));
         return (
           <motion.div
             key={s.screen}
-            style={{ opacity, scale }}
-            transition={{ duration: 0.4 }}
+            style={{ opacity, scale, y }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             className="absolute inset-0 flex justify-center"
           >
             <PhoneMockup screen={s.screen} float={false} />
           </motion.div>
         );
       })}
-      {/* Spacer to maintain size */}
-      <div className="opacity-0 pointer-events-none">
-        <PhoneMockup screen="home" float={false} />
-      </div>
     </div>
   );
 }

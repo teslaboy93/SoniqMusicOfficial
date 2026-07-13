@@ -31,11 +31,13 @@ export function Personalization() {
           </p>
         </motion.div>
 
-        {/* Bento grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 auto-rows-[180px]">
-          {/* Daily Mix - large */}
+        {/* Bento grid — 4 columns, 4 rows of 180px each */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 auto-rows-[180px] lg:auto-rows-[200px]">
+          {/* Row 1-2: Daily Mix (2x2) | Quick Picks (2x1) */}
+          {/*                        | Listen Again (1x1) | Favorites (1x1) */}
           <BentoCard className="md:col-span-2 lg:col-span-2 lg:row-span-2">
             <div className="absolute inset-0 opacity-90" style={{ background: gradients[0] }} />
+            <div className="absolute inset-0 opacity-20" style={{ background: "radial-gradient(circle at 70% 30%, rgba(255,255,255,0.4), transparent 60%)" }} />
             <div className="relative z-10 h-full flex flex-col justify-between p-7 text-white">
               <CalendarDays size={28} />
               <div>
@@ -47,7 +49,6 @@ export function Personalization() {
             </div>
           </BentoCard>
 
-          {/* Quick Picks */}
           <BentoCard className="lg:col-span-2">
             <div className="h-full flex items-center gap-5 p-6">
               <div className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0" style={{ background: gradients[1] }}>
@@ -60,7 +61,7 @@ export function Personalization() {
             </div>
           </BentoCard>
 
-          {/* Listen Again */}
+          {/* Row 2: Listen Again (1x1) | Favorites (1x1) */}
           <BentoCard>
             <div className="h-full flex flex-col justify-between p-6">
               <div className="w-12 h-12 rounded-2xl gradient-bg-soft flex items-center justify-center">
@@ -73,7 +74,6 @@ export function Personalization() {
             </div>
           </BentoCard>
 
-          {/* Favorites - gradient */}
           <BentoCard>
             <div className="absolute inset-0 opacity-90" style={{ background: gradients[3] }} />
             <div className="relative z-10 h-full flex flex-col justify-between p-6 text-white">
@@ -85,7 +85,7 @@ export function Personalization() {
             </div>
           </BentoCard>
 
-          {/* Lyrics */}
+          {/* Row 3: Lyrics (2x1) | Trending (1x1) */}
           <BentoCard className="lg:col-span-2">
             <div className="h-full flex items-center gap-5 p-6">
               <div className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0" style={{ background: gradients[5] }}>
@@ -98,7 +98,6 @@ export function Personalization() {
             </div>
           </BentoCard>
 
-          {/* Trending */}
           <BentoCard>
             <div className="h-full flex flex-col justify-between p-6">
               <div className="w-12 h-12 rounded-2xl gradient-bg-soft flex items-center justify-center">
@@ -111,8 +110,8 @@ export function Personalization() {
             </div>
           </BentoCard>
 
-          {/* Genres & Moods - wide */}
-          <BentoCard className="md:col-span-2 lg:col-span-2">
+          {/* Row 4: Genres & Moods (2x1) | Player (1x1) */}
+          <BentoCard className="lg:col-span-2">
             <div className="h-full flex items-center gap-5 p-6">
               <div className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0" style={{ background: gradients[7] }}>
                 <Radio size={26} className="text-white" />
@@ -124,7 +123,6 @@ export function Personalization() {
             </div>
           </BentoCard>
 
-          {/* Player */}
           <BentoCard>
             <div className="absolute inset-0 opacity-90" style={{ background: gradients[2] }} />
             <div className="relative z-10 h-full flex flex-col justify-between p-6 text-white">
