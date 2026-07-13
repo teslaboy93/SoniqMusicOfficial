@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+
+  --color-bg: #FCFCFD;
+  --color-surface: #FFFFFF;
+  --color-surface-2: #F5F6F8;
+  --color-border: #ECECEC;
+  --color-text: #111827;
+  --color-text-secondary: #6B7280;
+  --color-accent-from: #FF2F72;
+  --color-accent-to: #FF7B66;
+
+  --radius-card: 24px;
+  --radius-button: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  background-color: #FCFCFD;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #FF2F72, #FF5A6A, #FF7B66);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #FF2F72, #FF5A6A, #FF7B66);
+}
+
+.gradient-bg-soft {
+  background: linear-gradient(135deg, rgba(255,47,114,0.08), rgba(255,123,102,0.08));
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 15px;
+  color: white;
+  background: linear-gradient(135deg, #FF2F72, #FF7B66);
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  box-shadow: 0 4px 16px rgba(255, 47, 114, 0.3);
+}
+
+.btn-primary:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(255, 47, 114, 0.4);
+}
+
+.btn-primary:active {
+  transform: scale(0.99);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #111827;
+  background: white;
+  border: 1.5px solid #ECECEC;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+.btn-secondary:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-color: #d4d4d4;
+}
+
+.card {
+  background: white;
+  border-radius: 24px;
+  border: 1px solid #ECECEC;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04), 0 2px 12px rgba(0,0,0,0.03);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+}
