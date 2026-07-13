@@ -16,7 +16,7 @@ const columns = [
   },
   {
     title: "Download",
-    links: ["Android", "iOS (Coming Soon)", "Release Notes"],
+    links: ["Android", "iOS", "Release Notes"],
   },
 ];
 

@@ -3,7 +3,7 @@
 @theme {
   --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
 
-  --color-bg: #FCFCFD;
+  --color-bg: #FFFFFF;
   --color-surface: #FFFFFF;
   --color-surface-2: #F5F6F8;
   --color-border: #ECECEC;
@@ -27,7 +27,7 @@ html {
 body {
   margin: 0;
   font-family: "Plus Jakarta Sans", system-ui, sans-serif;
-  background-color: #FCFCFD;
+  background-color: #FFFFFF;
   color: #111827;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

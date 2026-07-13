@@ -23,10 +23,6 @@ const faqs = [
     q: "Can I download songs offline?",
     a: "Offline listening is on our roadmap. You'll soon be able to download your favorite tracks and listen without an internet connection.",
   },
-  {
-    q: "Is iOS coming?",
-    a: "Yes, Soniq is coming soon to iOS. We're working hard to bring the same premium experience to iPhone and iPad users.",
-  },
 ];
 
 export function FAQ() {

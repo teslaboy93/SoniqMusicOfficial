@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { Download, ArrowRight } from "lucide-react";
-import { PhoneMockup } from "./PhoneMockup";
+import heroImage from "../assets/Hero.png";
 
 const floatingChips = [
-  { label: "Daily Mix", x: "-8%", y: "12%", delay: 0 },
-  { label: "Trending", x: "88%", y: "18%", delay: 0.5 },
-  { label: "Quick Picks", x: "-12%", y: "45%", delay: 1 },
-  { label: "Listen Again", x: "92%", y: "50%", delay: 1.5 },
-  { label: "New Releases", x: "-6%", y: "78%", delay: 2 },
+  { label: "Daily Mix", x: "-10%", y: "14%", delay: 0 },
+  { label: "Trending", x: "78%", y: "20%", delay: 0.5 },
+  { label: "Quick Picks", x: "-14%", y: "42%", delay: 1 },
+  { label: "Listen Again", x: "80%", y: "48%", delay: 1.5 },
+  { label: "New Releases", x: "-8%", y: "72%", delay: 2 },
 ];
 
 export function Hero() {
@@ -18,14 +18,14 @@ export function Hero() {
         <motion.div
           animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
           transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-20 -left-20 w-[500px] h-[500px] rounded-full blur-[120px] opacity-40"
-          style={{ background: "radial-gradient(circle, rgba(255,47,114,0.15), transparent 70%)" }}
+          className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full blur-[140px] opacity-30"
+          style={{ background: "radial-gradient(circle, rgba(255,47,114,0.2), transparent 70%)" }}
         />
         <motion.div
           animate={{ x: [0, -30, 0], y: [0, 20, 0] }}
           transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-40 -right-20 w-[600px] h-[600px] rounded-full blur-[140px] opacity-40"
-          style={{ background: "radial-gradient(circle, rgba(255,123,102,0.15), transparent 70%)" }}
+          className="absolute top-20 -right-32 w-[700px] h-[700px] rounded-full blur-[160px] opacity-30"
+          style={{ background: "radial-gradient(circle, rgba(255,123,102,0.2), transparent 70%)" }}
         />
       </div>
 
@@ -80,19 +80,16 @@ export function Hero() {
               <ArrowRight size={16} />
             </a>
           </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-sm text-text-secondary"
-          >
-            Coming soon on iOS
-          </motion.p>
         </div>
-
-        {/* Right phone */}
         <div className="relative flex justify-center items-center min-h-[560px]">
+          <motion.img
+            src={heroImage}
+            alt="Hero"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative z-0 max-w-full max-h-[500px] object-contain"
+          />
           {floatingChips.map((chip) => (
             <motion.div
               key={chip.label}
@@ -110,7 +107,6 @@ export function Hero() {
               {chip.label}
             </motion.div>
           ))}
-          <PhoneMockup screen="home" />
         </div>
       </div>
     </section>

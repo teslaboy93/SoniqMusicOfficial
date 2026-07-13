@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Download, Smartphone } from "lucide-react";
+import { Download } from "lucide-react";
 import { PhoneMockup } from "./PhoneMockup";
 
 export function DownloadCTA() {
@@ -43,10 +43,6 @@ export function DownloadCTA() {
                   <Download size={20} />
                   Download for Android
                 </a>
-                <p className="text-sm text-text-secondary flex items-center gap-1.5">
-                  <Smartphone size={14} />
-                  Coming soon on iOS
-                </p>
               </div>
             </div>
 

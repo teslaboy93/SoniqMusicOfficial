@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CalendarDays, Zap, RotateCcw, Heart, Mic as Mic2, TrendingUp, Radio, Music2 } from "lucide-react";
+import { CalendarDays, Zap, RotateCcw, Heart, Mic as Mic2, TrendingUp, Radio, Music2, BarChart3 } from "lucide-react";
 
 const gradients = [
   "linear-gradient(135deg,#FF2F72,#FF7B66)",
@@ -110,6 +110,18 @@ export function Personalization() {
             </div>
           </BentoCard>
 
+          <BentoCard>
+            <div className="h-full flex flex-col justify-between p-6">
+              <div className="w-12 h-12 rounded-2xl gradient-bg-soft flex items-center justify-center">
+                <BarChart3 size={22} className="text-accent-from" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-text mb-1">Listening Stats</h3>
+                <p className="text-sm text-text-secondary">Track your listening habits and insights.</p>
+              </div>
+            </div>
+          </BentoCard>
+
           {/* Row 4: Genres & Moods (2x1) | Player (1x1) */}
           <BentoCard className="lg:col-span-2">
             <div className="h-full flex items-center gap-5 p-6">
@@ -123,7 +135,7 @@ export function Personalization() {
             </div>
           </BentoCard>
 
-          <BentoCard>
+          <BentoCard className="lg:col-span-2">
             <div className="absolute inset-0 opacity-90" style={{ background: gradients[2] }} />
             <div className="relative z-10 h-full flex flex-col justify-between p-6 text-white">
               <Music2 size={24} />
