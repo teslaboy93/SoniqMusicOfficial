@@ -8,6 +8,8 @@ const gradients = [
   "linear-gradient(135deg,#6750A4,#7F67C9)",
   "linear-gradient(135deg,#4F378B,#9A82DB)",
   "linear-gradient(135deg,#6750A4,#B69DF8)",
+  "linear-gradient(135deg,#9A82DB,#6750A4)",
+  "linear-gradient(135deg,#7F67C9,#4F378B)",
 ];
 
 export function Personalization() {

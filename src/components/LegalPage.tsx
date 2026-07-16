@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ShieldCheck, FileText, Database, type LucideIcon } from "lucide-react";
 import { Logo } from "./Logo";
+import { useScrollToHash } from "../hooks/useScrollToHash";
 
 type LegalKey = "privacy" | "terms" | "data" | "release";
 
@@ -33,11 +34,11 @@ const sections: Record<LegalKey, LegalSection> = {
       },
       {
         heading: "Account & payments",
-        body: "If you create an account or subscribe, we store only what is required to provide the service, such as your email and subscription status, handled by our secure payment provider.",
+        body: "No account required and no payments needed. Soniq is free to use with no sign-up or purchase required.",
       },
       {
         heading: "Your choices",
-        body: "You can clear your local listening data at any time from Settings. You may request deletion of any account data by contacting support.",
+        body: "You can clear your local listening data at any time from Settings.",
       },
     ],
   },
@@ -59,7 +60,7 @@ const sections: Record<LegalKey, LegalSection> = {
       },
       {
         heading: "Subscriptions",
-        body: "Paid plans renew automatically until cancelled. Refunds follow the policies of the app store you purchased from.",
+        body: "No subscription fees. Soniq is free forever. No plans renew and no purchases are required.",
       },
       {
         heading: "Content & licenses",
@@ -122,33 +123,33 @@ const sections: Record<LegalKey, LegalSection> = {
 };
 
 export function LegalPage({ section }: { section: LegalKey }) {
+  useScrollToHash();
   const s = sections[section];
   const Icon = s.icon;
 
   return (
     <main className="min-h-screen bg-surface-2 px-5 md:px-8 py-[72px]">
       <div className="max-w-[820px] mx-auto">
-        <Link
-          to="/"
-          className="inline-flex items-center gap-2 text-sm font-medium text-text-secondary hover:text-text transition-colors mb-10"
-        >
-          <ArrowLeft size={16} />
-          Back to home
-        </Link>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="bg-white rounded-[32px] border border-border shadow-[0_4px_24px_rgba(0,0,0,0.05)] p-8 md:p-12"
         >
-          <div className="flex items-center gap-3 mb-5">
+          <div className="flex items-center gap-4 mb-5">
             <div className="w-12 h-12 rounded-2xl gradient-bg-soft flex items-center justify-center">
               <Icon size={24} className="text-accent-from" />
             </div>
-            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-text">
+            <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-text flex-1">
               {s.title}
             </h1>
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 text-sm font-medium text-text-secondary hover:text-text transition-colors whitespace-nowrap"
+            >
+              <ArrowLeft size={16} />
+              Back to home
+            </Link>
           </div>
 
           <p className="text-text-secondary leading-relaxed mb-8">{s.intro}</p>
