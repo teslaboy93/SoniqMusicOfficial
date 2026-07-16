@@ -88,7 +88,7 @@ export function DownloadCTA() {
               </div>
 
               <div className="flex flex-col gap-3 items-center lg:items-start pt-1">
-                <a href="#" className="btn-primary text-base px-8 py-4">
+                <a href="https://drive.google.com/file/d/1xc6K3gTtBTFHEU0aRoRxm6NuV928fGg0/view?usp=sharing" className="btn-primary text-base px-8 py-4" target="_blank" rel="noopener noreferrer">
                   <Download size={20} />
                   Download Securely
                 </a>

@@ -93,7 +93,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.35 }}
             className="flex flex-wrap gap-2 sm:gap-3 justify-center lg:justify-start"
           >
-            <a href="#download" className="btn-primary">
+            <a href="https://drive.google.com/file/d/1xc6K3gTtBTFHEU0aRoRxm6NuV928fGg0/view?usp=sharing" className="btn-primary" target="_blank" rel="noopener noreferrer">
               <Download size={18} />
               Download App
             </a>

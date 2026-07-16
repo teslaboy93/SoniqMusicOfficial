@@ -30,13 +30,13 @@ const columns = [
   {
     title: "Download",
     links: [
-      { label: "Android", href: "#download" },
+      { label: "Android", href: "https://drive.google.com/file/d/1xc6K3gTtBTFHEU0aRoRxm6NuV928fGg0/view?usp=sharing", external: true },
       { label: "What's New", to: "/release-notes" },
     ],
   },
 ];
 
-type ColumnLink = { label: string; href?: string; to?: string; mailto?: string };
+type ColumnLink = { label: string; href?: string; to?: string; mailto?: string; external?: boolean };
 
 function LinkOrAnchor({ link }: { link: ColumnLink }) {
   const className =
@@ -53,6 +53,13 @@ function LinkOrAnchor({ link }: { link: ColumnLink }) {
       <Link to={link.to} className={className}>
         {link.label}
       </Link>
+    );
+  }
+  if (link.external) {
+    return (
+      <a href={link.href!} className={className} target="_blank" rel="noopener noreferrer">
+        {link.label}
+      </a>
     );
   }
   return (

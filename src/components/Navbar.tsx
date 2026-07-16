@@ -52,10 +52,10 @@ export function Navbar() {
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
-          <SectionLink href="#download" className="btn-primary text-sm py-2.5 px-5">
+          <a href="https://drive.google.com/file/d/1xc6K3gTtBTFHEU0aRoRxm6NuV928fGg0/view?usp=sharing" className="btn-primary text-sm py-2.5 px-5" target="_blank" rel="noopener noreferrer">
             <Download size={16} />
             Download App
-          </SectionLink>
+          </a>
         </div>
 
         <button
@@ -85,14 +85,16 @@ export function Navbar() {
                 {l.label}
               </SectionLink>
             ))}
-            <SectionLink
-              href="#download"
+            <a
+              href="https://drive.google.com/file/d/1xc6K3gTtBTFHEU0aRoRxm6NuV928fGg0/view?usp=sharing"
               onClick={() => setOpen(false)}
               className="btn-primary justify-center mt-2"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Download size={16} />
               Download App
-            </SectionLink>
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
