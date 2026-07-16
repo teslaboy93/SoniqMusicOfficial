@@ -4,12 +4,12 @@ import { Search, Play, SkipForward, Heart, Hop as Home, Compass, Library } from 
 type Screen = "home" | "discover" | "quickpicks" | "nowplaying" | "library";
 
 const albumGradients = [
-  "linear-gradient(135deg,#FF2F72,#FF7B66)",
-  "linear-gradient(135deg,#FF5A6A,#FF9966)",
-  "linear-gradient(135deg,#FF7B66,#FFB088)",
-  "linear-gradient(135deg,#FF2F72,#FF5A6A)",
-  "linear-gradient(135deg,#FF6B9D,#FFA07A)",
-  "linear-gradient(135deg,#E8556E,#FF7B66)",
+  "linear-gradient(135deg,#6750A4,#9A82DB)",
+  "linear-gradient(135deg,#7F67C9,#B69DF8)",
+  "linear-gradient(135deg,#9A82DB,#D0BCFF)",
+  "linear-gradient(135deg,#6750A4,#7F67C9)",
+  "linear-gradient(135deg,#4F378B,#D0BCFF)",
+  "linear-gradient(135deg,#7F67C9,#9A82DB)",
 ];
 
 function AlbumArt({ i, className = "" }: { i: number; className?: string }) {
@@ -120,7 +120,7 @@ function NowPlayingScreen() {
         ))}
       </div>
       <div className="w-full flex items-center justify-center gap-5 pt-1">
-        <Heart size={16} className="text-accent-from" fill="#FF2F72" />
+        <Heart size={16} className="text-accent-from" fill="#6750A4" />
         <div className="w-9 h-9 rounded-full gradient-bg flex items-center justify-center">
           <Play size={14} className="text-white" fill="white" />
         </div>

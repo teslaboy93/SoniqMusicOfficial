@@ -2,19 +2,17 @@ import { motion } from "framer-motion";
 import { CalendarDays, Zap, RotateCcw, Heart, Mic as Mic2, TrendingUp, Radio, Music2, BarChart3 } from "lucide-react";
 
 const gradients = [
-  "linear-gradient(135deg,#FF2F72,#FF7B66)",
-  "linear-gradient(135deg,#FF5A6A,#FF9966)",
-  "linear-gradient(135deg,#FF7B66,#FFB088)",
-  "linear-gradient(135deg,#FF2F72,#FF5A6A)",
-  "linear-gradient(135deg,#FF6B9D,#FFA07A)",
-  "linear-gradient(135deg,#E8556E,#FF7B66)",
-  "linear-gradient(135deg,#FF4E8E,#FF8A77)",
-  "linear-gradient(135deg,#FF2F72,#FF9966)",
+  "linear-gradient(135deg,#6750A4,#9A82DB)",
+  "linear-gradient(135deg,#7F67C9,#B69DF8)",
+  "linear-gradient(135deg,#9A82DB,#D0BCFF)",
+  "linear-gradient(135deg,#6750A4,#7F67C9)",
+  "linear-gradient(135deg,#4F378B,#9A82DB)",
+  "linear-gradient(135deg,#6750A4,#B69DF8)",
 ];
 
 export function Personalization() {
   return (
-    <section className="py-[120px] px-5 md:px-8">
+    <section id="personalization" className="py-[72px] px-5 md:px-8">
       <div className="max-w-[1280px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

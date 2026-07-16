@@ -19,13 +19,13 @@ export function Hero() {
           animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
           transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
           className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full blur-[140px] opacity-30"
-          style={{ background: "radial-gradient(circle, rgba(255,47,114,0.2), transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(103,80,164,0.2), transparent 70%)" }}
         />
         <motion.div
           animate={{ x: [0, -30, 0], y: [0, 20, 0] }}
           transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-20 -right-32 w-[700px] h-[700px] rounded-full blur-[160px] opacity-30"
-          style={{ background: "radial-gradient(circle, rgba(255,123,102,0.2), transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(154,130,219,0.2), transparent 70%)" }}
         />
       </div>
 

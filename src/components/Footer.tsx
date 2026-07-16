@@ -1,31 +1,66 @@
 import { Logo } from "./Logo";
-import { Globe, MessageCircle, Send, Rss } from "lucide-react";
+import { Link } from "react-router-dom";
+import { SectionLink } from "./SectionLink";
 
 const columns = [
   {
     title: "Features",
-    links: ["Daily Mixes", "Quick Picks", "Lyrics", "Top Charts"],
+    links: [
+      { label: "Daily Mixes", href: "#daily-mixes" },
+      { label: "Custom Playlists", href: "#custom-playlists" },
+      { label: "Genres & Moods", href: "#genres-moods" },
+      { label: "Listening Stats", href: "#listening-stats" },
+    ],
   },
   {
     title: "Support",
-    links: ["Contact Us", "Status"],
+    links: [
+      { label: "Contact Us", mailto: "teslaboy93@gmail.com" },
+      { label: "FAQ", href: "#faq" },
+    ],
   },
   {
     title: "Privacy",
-    links: ["Privacy Policy", "Terms of Service", "Data Usage"],
+    links: [
+      { label: "Privacy Policy", to: "/privacy" },
+      { label: "Terms of Service", to: "/terms" },
+      { label: "Data Usage", to: "/data" },
+    ],
   },
   {
     title: "Download",
-    links: ["Android", "iOS", "Release Notes"],
+    links: [
+      { label: "Android", href: "#download" },
+      { label: "What's New", to: "/release-notes" },
+    ],
   },
 ];
 
-const socials = [
-  { icon: Globe, href: "#", label: "Website" },
-  { icon: MessageCircle, href: "#", label: "Community" },
-  { icon: Send, href: "#", label: "Telegram" },
-  { icon: Rss, href: "#", label: "Blog" },
-];
+type ColumnLink = { label: string; href?: string; to?: string; mailto?: string };
+
+function LinkOrAnchor({ link }: { link: ColumnLink }) {
+  const className =
+    "text-sm text-text-secondary hover:text-text transition-colors";
+  if (link.mailto) {
+    return (
+      <a href={`mailto:${link.mailto}`} className={className}>
+        {link.label}
+      </a>
+    );
+  }
+  if (link.to) {
+    return (
+      <Link to={link.to} className={className}>
+        {link.label}
+      </Link>
+    );
+  }
+  return (
+    <SectionLink href={link.href!} className={className}>
+      {link.label}
+    </SectionLink>
+  );
+}
 
 export function Footer() {
   return (
@@ -39,18 +74,6 @@ export function Footer() {
               Soniq is a modern music streaming app focused on personalization
               and discovery — built for people who love music.
             </p>
-            <div className="flex gap-2 mt-2">
-              {socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  aria-label={s.label}
-                  className="w-9 h-9 rounded-full bg-surface-2 border border-border flex items-center justify-center text-text-secondary hover:text-accent-from hover:border-accent-from/30 transition-colors"
-                >
-                  <s.icon size={16} />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Columns */}
@@ -59,13 +82,7 @@ export function Footer() {
               <div key={col.title} className="flex flex-col gap-3">
                 <h4 className="text-sm font-bold text-text">{col.title}</h4>
                 {col.links.map((link) => (
-                  <a
-                    key={link}
-                    href="#"
-                    className="text-sm text-text-secondary hover:text-text transition-colors"
-                  >
-                    {link}
-                  </a>
+                  <LinkOrAnchor key={link.label} link={link} />
                 ))}
               </div>
             ))}

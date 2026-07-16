@@ -60,7 +60,7 @@ export function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-2xl mx-auto pt-[120px] pb-16"
+          className="text-center max-w-2xl mx-auto pt-[72px] pb-12"
         >
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-text leading-tight">
             An experience that

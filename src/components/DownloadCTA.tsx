@@ -4,7 +4,7 @@ import { PhoneMockup } from "./PhoneMockup";
 
 export function DownloadCTA() {
   return (
-    <section id="download" className="py-[120px] px-5 md:px-8">
+    <section id="download" className="py-[72px] px-5 md:px-8">
       <div className="max-w-[1280px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -18,7 +18,7 @@ export function DownloadCTA() {
             className="absolute inset-0 -z-10"
             style={{
               background:
-                "radial-gradient(ellipse at 30% 50%, rgba(255,47,114,0.08), transparent 60%), radial-gradient(ellipse at 80% 80%, rgba(255,123,102,0.08), transparent 60%)",
+                "radial-gradient(ellipse at 30% 50%, rgba(103,80,164,0.08), transparent 60%), radial-gradient(ellipse at 80% 80%, rgba(154,130,219,0.08), transparent 60%)",
             }}
           />
 

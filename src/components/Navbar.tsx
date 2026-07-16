@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Download } from "lucide-react";
 import { Logo } from "./Logo";
+import { SectionLink } from "./SectionLink";
 
 const links = [
   { label: "Features", href: "#features" },
   { label: "Experience", href: "#experience" },
+  { label: "Personalization", href: "#personalization" },
   { label: "FAQ", href: "#faq" },
   { label: "Support", href: "#support" },
 ];
@@ -39,21 +41,21 @@ export function Navbar() {
 
         <nav className="hidden md:flex items-center gap-8">
           {links.map((l) => (
-            <a
+            <SectionLink
               key={l.href}
               href={l.href}
               className="text-sm font-medium text-text-secondary hover:text-text transition-colors"
             >
               {l.label}
-            </a>
+            </SectionLink>
           ))}
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
-          <a href="#download" className="btn-primary text-sm py-2.5 px-5">
+          <SectionLink href="#download" className="btn-primary text-sm py-2.5 px-5">
             <Download size={16} />
             Download App
-          </a>
+          </SectionLink>
         </div>
 
         <button
@@ -74,23 +76,23 @@ export function Navbar() {
             className="md:hidden absolute top-[72px] left-5 right-5 bg-white rounded-2xl border border-border shadow-lg p-5 flex flex-col gap-3"
           >
             {links.map((l) => (
-              <a
+              <SectionLink
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
                 className="text-base font-medium text-text-secondary hover:text-text py-2"
               >
                 {l.label}
-              </a>
+              </SectionLink>
             ))}
-            <a
+            <SectionLink
               href="#download"
               onClick={() => setOpen(false)}
               className="btn-primary justify-center mt-2"
             >
               <Download size={16} />
               Download App
-            </a>
+            </SectionLink>
           </motion.div>
         )}
       </AnimatePresence>
